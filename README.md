@@ -1,1 +1,1 @@
-# admin-panel-app
+Учебный проект на React
