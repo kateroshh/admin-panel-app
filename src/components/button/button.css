@@ -1,0 +1,108 @@
+:root{
+  --button-background-primary: #459DF5;
+  --button-font-color-primary: #FFF;
+  --button-background-icon-primary: #FFF;
+  --button-background-hover-primary: #BAD8F5;
+
+  --button-background-secondary: transparent;
+  --button-font-color-secondary: #459DF5;
+  --button-background-icon-secondary: #459DF5;
+  --button-background-hover-secondary: #BAD8F5;
+
+  --button-background-third: #F53152;
+  --button-font-color-third: #FFF;
+  --button-background-icon-third: #FFF;
+  --button-background-hover-third: #f792a3;
+
+  --button-background-clear: transparent;
+  --button-font-color-clear: #459DF5;
+  --button-background-icon-clear: #BAD8F5;
+  --button-background-hover-clear: #459DF5;
+}
+.button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+}
+.button_size_huge{
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.button_size_huge .button__text {
+  font-size: 0.8125rem;
+}
+.button_size_huge .button__icon+.button__text {
+  padding-left: 0.5rem;
+}
+.button_size_huge .button__icon{
+  width: 1rem;
+  height: 1rem;
+}
+.button_size_huge_icon {
+  padding: 0.25rem;
+}
+.button_size_small {
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+}
+.button_size_small_icon {
+  padding: 0.25rem;
+}
+.button_size_small .button__text {
+  font-size: 0.8125rem;
+}
+.button_size_small .button__icon+.button__text {
+  padding-left: 0.25rem;
+}
+.button_size_small .button__icon {
+  width: 1rem;
+  height: 1rem;
+}
+.button_primary{
+  background-color: var(--button-background-primary);
+  color: var(--button-font-color-primary);
+}
+.button_primary .button__icon {
+  fill: var(--button-background-icon-primary);
+  stroke: var(--button-background-icon-primary);
+}
+.button_primary:hover {
+  box-shadow: 0px 2px 5px 2px var(--button-background-hover-primary);
+}
+.button_secondary {
+  background-color: var(--button-background-secondary);
+  color: var(--button-font-color-secondary);
+}
+.button_secondary .button__icon {
+  fill: var(--button-background-icon-secondary);
+  stroke: var(--button-background-icon-secondary);
+}
+.button_secondary:hover {
+  background-color: var(--button-background-hover-secondary);
+}
+.button_third {
+  background-color: var(--button-background-third);
+  color: var(--button-font-color-third);
+}
+.button_third .button__icon {
+  fill: var(--button-background-icon-third);
+  stroke: var(--button-background-icon-third);
+}
+.button_third:hover {
+  box-shadow: 0px 2px 5px 2px var(--button-background-hover-third);
+}
+.button_clear {
+  background-color: var(--button-background-clear);
+  color: var(--button-font-color-clear);
+}
+.button_clear .button__icon {
+  fill: var(--button-background-icon-clear);
+  stroke: var(--button-background-icon-clear);
+}
+.button_clear:hover>.button__icon {
+  fill: var(--button-background-hover-clear);
+  stroke: var(--button-background-hover-clear);
+}
+
+

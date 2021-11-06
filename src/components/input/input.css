@@ -1,0 +1,148 @@
+:root {
+  --input-color-placeholder-primary: #BAD8F5;
+  --input-focus-primary: #459DF5;
+  --input-color-border-primary: #BAD8F5;
+  --input-color-text-primary: #000;
+
+  --input-color-icon-after: #459DF5;
+  --input-color-icon-before: #000;
+
+  --input-background-disabled: #BAD8F5;
+  --input-color-border-disabled: #459DF5;
+  --input-color-placeholder-disabled: #459DF5;
+
+  --input-color-placeholder-error: #BAD8F5;
+  --input-focus-error: #F53152;
+  --input-color-border-error: #F53152;
+  --input-color-text-error: #F53152;
+
+  
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8125rem;
+}
+.input_size_small{
+  width: 7.875rem;
+}
+.input_size_medium {
+  width: 8.875rem;
+}
+.input_size_huge {
+  width: 20rem;
+}
+.input__label {
+  margin-bottom: 0.5rem;
+}
+.input-order{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.input-order__button {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.input-order__item:focus+.input-order__button {
+  display: block;
+}
+.input-order__item{
+  outline-width: 0;
+  border-radius: 4px;
+  width: 100%;
+  height: 2rem;
+  padding: 0rem 1.25rem 0rem 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.input-order__item_left{
+  padding-left: 1.75rem;
+}
+.input-order__item_right{
+  padding-right: 1.25rem;
+}
+.input-order__img-before {
+  fill: var(--input-color-icon-before);
+  stroke: var(--input-color-icon-before);
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  margin-left: 0.5rem;
+}
+.input-order__img-after {
+  fill: var(--input-color-icon-after);
+  stroke: var(--input-color-icon-after);
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  right: 0;
+  margin-right: 0.5rem;
+}
+.input-order_primary {
+  border: 1px solid var(--input-color-border-primary);
+  color: var(--input-color-text-primary);
+}
+.input-order_primary::placeholder{
+  color: var(--input-color-placeholder-primary);
+}
+.input-order_primary:focus {
+  border: 1px solid var(--input-focus-primary);
+}
+.input-order_disabled {
+  background-color: var(--input-background-disabled);
+  border: 1px solid var(--input-color-border-disabled);
+}
+.input-order_disabled::placeholder {
+  color: var(--input-color-placeholder-disabled);
+}
+.input-order_error {
+  border: 1px solid var(--input-color-border-error);
+  color: var(--input-color-text-error);
+}
+
+.input-order_error::placeholder {
+  color: var(--input-color-placeholder-error);
+}
+.input-order_error:focus {
+  border: 1px solid var(--input-focus-error);
+}
+.input-order_with::before{
+  display: block;
+  content: "с";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 0.42rem;
+  left: 0.5rem;
+}
+.input-order_on::before {
+  display: block;
+  content: "по";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 0.42rem;
+  left: 0.5rem;
+}
+.input-order_from::before {
+  display: block;
+  content: "от";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 0.42rem;
+  left: 0.5rem;
+}
+.input-order_to::before {
+  display: block;
+  content: "до";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 0.42rem;
+  left: 0.5rem;
+}
