@@ -1,0 +1,17 @@
+:root{
+  --filter-hidden-backround: #EBF0F5;
+}
+.order-search {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-search__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-search_space {
+  margin: 0 1rem;
+}

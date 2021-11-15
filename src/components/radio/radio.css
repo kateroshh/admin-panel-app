@@ -1,0 +1,45 @@
+:root {
+  --radio-color-text: #459DF5;
+  --radio-background-color: #fff;
+}
+
+.radio{
+  position: relative;
+  width: 12rem;
+}
+.radio__input{
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+}
+.radio:hover .dropdowns {
+  display: block;
+}
+.dropdowns {
+  width: 10rem;
+  background-color: var(--radio-background-color);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1),
+    0px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.dropdown-radio__item:checked+.dropdown-radio__text {
+  color: var(--radio-color-text);
+}
+.dropdown-radio__items{
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  line-height: 16px;
+}
+.dropdown-radio__items:hover {
+  color: var(--radio-color-text);
+  cursor: pointer;
+}
+.dropdown-radio__item {
+  display: none;
+  cursor: pointer;
+}

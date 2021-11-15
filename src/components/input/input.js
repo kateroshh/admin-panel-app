@@ -1,10 +1,11 @@
-import Button from '../button/button';
-
 import './input.css';
+
+import Button from '../button/button';
 
 /*icons*/
 import { ReactComponent as SearchIcon } from './icons/search.svg';
 import { ReactComponent as LockedIcon } from './icons/locked.svg';
+import { ReactComponent as ArrowIcon } from './icons/v_arrow.svg';
 /*icons*/
 
 const STYLES = [
@@ -16,11 +17,14 @@ const SIZES = [
   "input_size_medium",
   "input_size_small",
   "input_size_huge",
+  "input_size_more_medium",
 ];
 const ICONS_AFTER = [
   '',
   <SearchIcon className="input-order__img-after" />,
   <LockedIcon className="input-order__img-after" />,
+  <ArrowIcon className="input-order__img-after_blue" />,
+
 ];
 const ICONS_BEFORE = [
   '',
@@ -42,7 +46,10 @@ const Input = ({
   imageAfter,
   imageBefore,
   textBefore,
-  textLabel
+  textLabel,
+  buttonOn,
+  readOnly,
+  valueInput,
 }) => {
 
   //Проверка параметров передаваемых в кнопку
@@ -53,6 +60,19 @@ const Input = ({
   const checkPlaceholderText = placeholderText===undefined
     ? ''
     : placeholderText;
+
+  const checkValueInput = valueInput===undefined
+    ? ''
+    : valueInput;
+
+  const checkReadOnly = readOnly===true
+    ? true
+    : false;
+
+  const checkButtonOn = (buttonOn===undefined || buttonOn===0)
+    ? 0
+    : 1;
+  console.log(checkButtonOn===1 );
 
   const checkImageAfter = ICONS_AFTER[imageAfter]!==undefined
     ? ICONS_AFTER[imageAfter]
@@ -68,17 +88,15 @@ const Input = ({
 
   const checkTextLabel = textLabel===undefined
     ? ''
-    : <label class="input__label">{textLabel}</label>;
+    : <label className="input__label">{textLabel}</label>;
 
   let checkButtonStyle = STYLES[inputStyle]!==undefined
     ? STYLES[inputStyle]
     : STYLES[0];
 
   if(checkTextBefore!=='' || checkImageBefore!==''){
-    checkButtonStyle = checkButtonStyle + "input-order__item_left";
-  } else {
-    
-  }
+    checkButtonStyle = checkButtonStyle + " input-order__item_left";
+  } 
 
 
   return (
@@ -87,14 +105,22 @@ const Input = ({
         <div className={`input-order  ${checkTextBefore}`}>
           {checkImageBefore}
           <input 
-            className="input-order__item input-order_primary" 
+            className={`input-order__item ${checkButtonStyle}`}
             type="text" 
-            placeholder={checkPlaceholderText}  />
+            placeholder={checkPlaceholderText}
+            readOnly={checkReadOnly}
+            value={checkValueInput}/>
+          {checkButtonOn===1 ? 
+            <div className="input-order__button">
+              <Button buttonStyle = {3} buttonIcon={7} buttonText=""/> 
+            </div>
+            :
+            <span></span>
+          }
           <div className="input-order__button">
             <Button buttonStyle = {3} buttonIcon={7} buttonText=""/> 
           </div>
           {checkImageAfter}
-          
         </div>
       </div>
   )

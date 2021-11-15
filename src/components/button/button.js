@@ -68,7 +68,7 @@ const Button = ({
 
   return (
       <div>
-        <button 
+        <button style={{cursor: "pointer"}}
           onClick={onClick} 
           className={`button ${checkButtonStyle} ${checkButtonSize}`}>
             {checkButtonIcon}

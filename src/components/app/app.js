@@ -1,16 +1,20 @@
 import { Component } from 'react';
 
-import Header from '../header/header';
-import Input from '../input/input';
-
 import './reset.css';
 import './app.css';
+
+import Header from '../header/header';
+import OrderSearch from '../order-search/order-search';
+
+
+
 
 function App() {
   return (
     <div className="wrapper">
       <Header />
-      {/* <Input placeholderText = "dd.mm.yyyy"/> */}
+      <OrderSearch />
+
 
     </div>
   );

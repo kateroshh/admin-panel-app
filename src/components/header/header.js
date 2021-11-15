@@ -4,8 +4,8 @@ import './header.css';
 
 const Header = () => {
   return (
-    <div class="title">
-      <div><h2 class="title__text">Список заказов</h2></div>
+    <div className="title">
+      <div><h2 className="title__text">Список заказов</h2></div>
       <Button 
         buttonStyle = {1}
         buttonIcon = {1}

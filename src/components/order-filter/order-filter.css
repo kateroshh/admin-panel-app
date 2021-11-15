@@ -1,0 +1,26 @@
+:root {
+  --filter-hidden-backround: #EBF0F5;
+}
+.order-filter {
+  background-color: var(--filter-hidden-backround);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.order-filter__date,
+.order-filter__sum,
+.order-filter__apply {
+  display: flex;
+  align-items: end;
+  margin-right: 1rem;
+}
+
+.order-filter__status {
+  position: relative;
+  margin-right: 1rem;
+}
+.order-filter_space{
+  margin-right: 0.25rem;
+}
