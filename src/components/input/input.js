@@ -61,9 +61,9 @@ const Input = ({
     ? ''
     : placeholderText;
 
-  const checkValueInput = valueInput===undefined
-    ? ''
-    : valueInput;
+  // const checkValueInput = valueInput===undefined
+  //   ? ''
+  //   : valueInput;
 
   const checkReadOnly = readOnly===true
     ? true
@@ -72,7 +72,6 @@ const Input = ({
   const checkButtonOn = (buttonOn===undefined || buttonOn===0)
     ? 0
     : 1;
-  console.log(checkButtonOn===1 );
 
   const checkImageAfter = ICONS_AFTER[imageAfter]!==undefined
     ? ICONS_AFTER[imageAfter]
@@ -109,7 +108,7 @@ const Input = ({
             type="text" 
             placeholder={checkPlaceholderText}
             readOnly={checkReadOnly}
-            value={checkValueInput}/>
+            value={valueInput} />
           {checkButtonOn===1 ? 
             <div className="input-order__button">
               <Button buttonStyle = {3} buttonIcon={7} buttonText=""/> 

@@ -1,0 +1,13 @@
+:root {
+  --table-body-background: #FFF;
+}
+.table__body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--table-body-background);
+  flex: 1 2;
+  overflow-y: scroll;
+}
+.table__body-list {
+  width: 100%;
+}

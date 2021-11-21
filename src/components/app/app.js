@@ -5,8 +5,7 @@ import './app.css';
 
 import Header from '../header/header';
 import OrderSearch from '../order-search/order-search';
-
-
+import Orders from '../orders/orders';
 
 
 function App() {
@@ -14,7 +13,8 @@ function App() {
     <div className="wrapper">
       <Header />
       <OrderSearch />
-
+      <Orders />
+      
 
     </div>
   );

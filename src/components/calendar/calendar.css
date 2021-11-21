@@ -1,0 +1,63 @@
+:root {
+  --calendar-color-placeholder-primary: #BAD8F5;
+  --calendar-focus-primary: #459DF5;
+  --calendar-color-border-primary: #BAD8F5;
+  --calendar-color-text-primary: #000;
+  
+}
+
+.calendar{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8125rem;
+  position: relative;
+}
+
+.calendar_size_medium {
+  width: 8.875rem;
+}
+.calendar-order__item{
+  outline-width: 0;
+  border-radius: 4px;
+  width: 100%;
+  height: 2rem;
+  padding: 0rem 0rem 0rem 1.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.calendar-order_primary {
+  border: 1px solid var(--calendar-color-border-primary);
+  color: var(--calendar-color-text-primary);
+}
+.calendar-order_primary::placeholder{
+  color: var(--calendar-color-placeholder-primary);
+} 
+.calendar ::-webkit-calendar-picker-indicator {
+  background-image: url('icons/calendar.svg');
+}
+.calendar-order_primary:focus {
+  border: 1px solid var(--calendar-focus-primary);
+}
+.calendar-order_with::before {
+  display: block;
+  content: "с";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 2.1rem;
+  left: 0.5rem;
+}
+
+.calendar-order_on::before {
+  display: block;
+  content: "по";
+  font-size: 0.8125rem;
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  left: 0.5rem;
+}
+.calendar__label {
+  margin-bottom: 0.5rem;
+}

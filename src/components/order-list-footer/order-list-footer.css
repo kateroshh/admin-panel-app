@@ -1,0 +1,70 @@
+:root{
+  --table-footer-background: #EBF0F5;
+  --dropdowns-footer-background-color: #fff;
+}
+.table__footer {
+  background-color: var(--table-footer-background);
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 1rem;
+}
+
+.table__footer-edit {
+  display: flex;
+  align-items: center;
+}
+
+.table__footer-delete {
+  position: relative;
+}
+
+.table__footer-delete:hover .dropdown__item-hidden {
+  display: block;
+}
+
+.table__footer-text {
+  margin-right: 1rem;
+}
+.table__footer-selected{
+  margin-left: 0.25rem;
+}
+
+.table__footer-pages {
+  display: flex;
+  align-items: center;
+}
+.table__footer-pages .button{
+  margin-right: 0.25rem;
+}
+.button_footer{
+  margin-right: 1rem;
+}
+.dropdowns__footer {
+  width: 160px;
+  background-color: var(--dropdowns-footer-background-color);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1),
+    0px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  display: none;
+}
+.dropdowns__footer-delete {
+  position: absolute;
+  bottom: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+.table__footer-delete:hover .dropdowns__footer {
+  display: flex;
+}
+.dropdowns__footer__text {
+  margin-bottom: 0.25rem;
+}
+.dropdowns__footer_button{
+  margin-bottom: 0.25rem;
+}

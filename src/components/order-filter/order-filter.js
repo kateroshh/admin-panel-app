@@ -1,6 +1,7 @@
 import Input from '../input/input';
 import Button from '../button/button';
-import Radio from '../radio/radio';
+import Select from '../select/select';
+import Calendar from '../calendar/calendar';
 
 import './order-filter.css';
 
@@ -9,19 +10,12 @@ const OrderFilter = () => {
     <div className="order-filter">
       <div className="order-filter__date">
         <div className="order-filter_space">
-          <Input 
-            inputSize={1}
-            textBefore={1}
-            placeholderText="dd.mm.yyyy"
-            textLabel="Дата оформления"/>
+          <Calendar textBefore={1} textLabel="Дата оформления"/>
         </div>
-        <Input 
-          inputSize={1}
-          textBefore={2}
-          placeholderText="dd.mm.yyyy"/>
+        <Calendar textBefore={2}/>
       </div>
       <div className="order-filter__status">
-        <Radio />
+        <Select />
       </div>
       <div className="order-filter__sum">
         <div className="order-filter_space">
