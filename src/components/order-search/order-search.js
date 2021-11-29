@@ -6,6 +6,9 @@ import Input from '../input/input';
 import Button from '../button/button';
 import OrderFilter from '../order-filter/order-filter';
 
+import {actions, store} from '../../data';
+import { connect } from 'react-redux';
+
 
 class OrderSearch extends Component {
   constructor(props){
@@ -33,7 +36,12 @@ class OrderSearch extends Component {
             <Input 
               inputSize={2} 
               imageBefore={1}
-              placeholderText="Номер заказа или ФИО"/>
+              placeholderText="Номер заказа или ФИО"
+              onChange={(event)=>{
+                store.dispatch(actions.userFilterSetNameFilterAction(event.currentTarget.value));
+                store.dispatch(actions.userFilterSetIdFilterAction(event.currentTarget.value));
+              }}
+              valueInput={this.props.filterName!='' ? this.props.filterName : this.props.filterId}/>
             <div className="order-search_space">
               <Button 
                 buttonSize={1} 
@@ -44,7 +52,10 @@ class OrderSearch extends Component {
             <Button 
               buttonSize={1} 
               buttonStyle={1}
-              buttonText="Сбросить фильтры"/>
+              buttonText="Сбросить фильтры"
+              onClick={()=>{
+                store.dispatch(actions.userFilterSetClearFilterAction());
+              }}/>
           </div>
           <Button 
             buttonSize={1} 
@@ -58,4 +69,10 @@ class OrderSearch extends Component {
   }
 }
 
-export default OrderSearch;
+const mapStateToProps = function(state) {
+  return {
+    filterName: state.filterReducer.filterName,
+    filterId: state.filterReducer.filterId,
+  }
+}
+export default connect(mapStateToProps)(OrderSearch);

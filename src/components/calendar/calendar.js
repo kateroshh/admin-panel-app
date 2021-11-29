@@ -10,6 +10,7 @@ const Calendar = ({
   valueInput = null,
   textBefore = 0,
   textLabel = '',
+  onChange,
 }) => {
 
   const checkTextBefore = TEXT_BEFORE[textBefore]!==undefined
@@ -19,7 +20,6 @@ const Calendar = ({
   const checkTextLabel = textLabel===undefined
   ? ''
   : <label className="calendar__label">{textLabel}</label>;
-
   return (
       <div className={'calendar calendar_size_medium'}>
         {checkTextLabel}
@@ -27,7 +27,8 @@ const Calendar = ({
           <input 
             className={'calendar-order__item calendar-order_primary'}
             type="date"
-            value={valueInput} />
+            value={valueInput}
+            onChange={onChange} />
         </div>
       </div>
   )

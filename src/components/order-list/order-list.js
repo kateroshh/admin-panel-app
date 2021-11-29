@@ -3,10 +3,8 @@ import OrderListItem from '../order-list-item/order-list-item';
 
 import './order-list.css';
 
-import OrdersData from '../../data/orders.json'
-
-const OrderList = () => {
-  const ordersRender = OrdersData.map((orderItem) => {
+const OrderList = ({ordersData}) => {
+  const ordersRender = ordersData.map((orderItem) => {
     return (
       <OrderListItem {...orderItem} key={orderItem.id}/>
     );

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { createStore } from 'redux'
 
 import './reset.css';
 import './app.css';
@@ -14,8 +15,6 @@ function App() {
       <Header />
       <OrderSearch />
       <Orders />
-      
-
     </div>
   );
 }

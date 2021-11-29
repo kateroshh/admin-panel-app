@@ -5,12 +5,22 @@ import Calendar from '../calendar/calendar';
 
 import './order-filter.css';
 
+import { actions, store } from '../../data';
+import { connect } from 'react-redux';
+
 const OrderFilter = () => {
   return (
     <div className="order-filter">
       <div className="order-filter__date">
         <div className="order-filter_space">
-          <Calendar textBefore={1} textLabel="Дата оформления"/>
+          <Calendar 
+            textBefore={1} 
+            textLabel="Дата оформления"
+            onChange={(event)=>{
+                const rr = new Date(event.timeStamp)
+                console.log(rr);
+                // store.dispatch(actions.userFilterSetDateMinFilterAction(event.currentTarget.value));
+              }}/>
         </div>
         <Calendar textBefore={2}/>
       </div>
@@ -38,4 +48,12 @@ const OrderFilter = () => {
   )
 }
 
-export default OrderFilter;
+// export default OrderFilter;
+
+const mapStateToProps = function(state) {
+  return {
+    calendarDateMin: state.filterReducer.calendarDateMin,
+    calendarDateMax: state.filterReducer.calendarDateMax,
+  }
+}
+export default connect(mapStateToProps)(OrderFilter);

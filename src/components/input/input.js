@@ -50,6 +50,7 @@ const Input = ({
   buttonOn,
   readOnly,
   valueInput,
+  onChange,
 }) => {
 
   //Проверка параметров передаваемых в кнопку
@@ -105,10 +106,11 @@ const Input = ({
           {checkImageBefore}
           <input 
             className={`input-order__item ${checkButtonStyle}`}
-            type="text" 
-            placeholder={checkPlaceholderText}
-            readOnly={checkReadOnly}
-            value={valueInput} />
+            type = "text" 
+            placeholder = {checkPlaceholderText}
+            readOnly = {checkReadOnly}
+            value = {valueInput}
+            onChange = {onChange} />
           {checkButtonOn===1 ? 
             <div className="input-order__button">
               <Button buttonStyle = {3} buttonIcon={7} buttonText=""/> 
